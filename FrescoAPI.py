@@ -11,8 +11,8 @@ KEYSPACE = "fresco_seg"
 
 auth_provider = PlainTextAuthProvider(username='cassandra', password='cassandra')
 
-cluster = Cluster(auth_provider=auth_provider, protocol_version=2)
-session = cluster.connect(keyspace=KEYSPACE)
+cluster = Cluster(["10.5.0.5"], auth_provider=auth_provider, protocol_version=2)
+#session = cluster.connect(keyspace=KEYSPACE)
 
 
 #session = cluster.connect()
@@ -29,6 +29,6 @@ session = cluster.connect(keyspace=KEYSPACE)
 #api = Api(app)
 
 if __name__ == '__main__':
-    connection.setup(['127.0.0.1'], "customer_segment", protocol_version=3)
+    connection.setup(["10.5.0.5"], "fresco_seg", protocol_version=3)
     sync_table(CustomerSeg)
     app.run(host="0.0.0.0", port=8081,debug=True)
