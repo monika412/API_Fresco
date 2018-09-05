@@ -1,6 +1,7 @@
 from cassandra.cluster import Cluster
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import sync_table
+from cassandra.auth import PlainTextAuthProvider
 from flask import Flask,jsonify
 from models.CustomerSeg import CustomerSeg
 from views.api import app
@@ -8,8 +9,9 @@ from views.api import app
 
 KEYSPACE = "fresco_seg"
 
+auth_provider = PlainTextAuthProvider(username='cassandra', password='cassandra')
 
-cluster = Cluster()
+cluster = Cluster(auth_provider=auth_provider, protocol_version=2)
 session = cluster.connect(keyspace=KEYSPACE)
 
 
