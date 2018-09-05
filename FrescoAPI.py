@@ -9,7 +9,7 @@ from views.api import app
 KEYSPACE = "fresco_seg"
 
 
-cluster = Cluster(['db'])
+cluster = Cluster(['172.19.0.2'])
 session = cluster.connect(keyspace=KEYSPACE)
 
 
