@@ -11,7 +11,7 @@ KEYSPACE = "fresco_seg"
 
 auth_provider = PlainTextAuthProvider(username='cassandra', password='cassandra')
 
-cluster = Cluster(['10.5.0.5'], auth_provider=auth_provider, protocol_version=2)
+#cluster = Cluster(['10.5.0.5'], auth_provider=auth_provider, protocol_version=2)
 #session = cluster.connect(keyspace=KEYSPACE)
 
 
