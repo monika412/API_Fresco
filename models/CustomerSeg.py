@@ -18,13 +18,3 @@ class CustomerSeg(Base):
 			#'match_flag': str(self.match_flag)
 		}
 		
-class SegmentLookup(Base):
-	segment_cd = columns.Text(primary_key=True)
-	segment = columns.Text()
-	
-
-	def get_data_segment(self):
-		return {
-			'segment_cd': str(self.segment_cd),
-			'segment': str(self.segment_cd)
-		}		
