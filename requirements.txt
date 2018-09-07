@@ -2,3 +2,4 @@ cassandra-driver==3.2.1
 Flask==0.12.3
 Flask-RESTful==0.3.6
 pandas==0.23.3
+Flask-RESTPlus==0.11.0
