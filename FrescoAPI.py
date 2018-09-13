@@ -12,7 +12,7 @@ auth_provider = PlainTextAuthProvider(username='cassandra', password='cassandra'
 
 if __name__ == '__main__':
 	
-	connection.setup(['127.0.0.1'],'fresco_seg', protocol_version=3)
+	connection.setup(['docker_c_db'],'fresco_seg', protocol_version=3)
 	#connection.setup(['10.5.0.5'], "fresco_seg", protocol_version=3)
 	sync_table(CustomerSeg)
 	#app.run(host="0.0.0.0", port=8081,debug=True,threaded=True,ssl_context=('apicert.pem', 'apikey.pem'))
